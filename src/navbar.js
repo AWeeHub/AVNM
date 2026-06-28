@@ -5,8 +5,7 @@ export function initNavbar() {
   if (!navbar) return
 
   ScrollTrigger.create({
-    trigger: '.hero',
-    start: 'bottom 90%',
+    start: 80,
     onEnter: () => navbar.classList.add('scrolled'),
     onLeaveBack: () => navbar.classList.remove('scrolled'),
   })

@@ -441,6 +441,10 @@ body.cursor--expanded .cursor__ring {
   0%, 100% { transform: translateY(0px) rotate(-0.4deg); }
   50%       { transform: translateY(-16px) rotate(0.4deg); }
 }
+@keyframes productFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
 .avnm-cup__straw {
   position: absolute;
   top: -62px;
@@ -724,11 +728,12 @@ body.cursor--expanded .cursor__ring {
   .pscene__product-stage {
     right: auto;
     left: 50%;
-    /* GSAP applies xPercent: -50, yPercent: -50 in mobile mm */
+    top: 64%; /* cup lives in lower half so hero text has room above */
   }
   .pscene__product-img {
     height: 52vh;
-    max-height: 380px;
+    max-height: 340px;
+    animation: productFloat 3.5s ease-in-out infinite;
   }
   .pscene__caption {
     display: none;
@@ -997,8 +1002,8 @@ body.cursor--expanded .cursor__ring {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/visit-storefront.jpg') center top / cover no-repeat;
-  opacity: 0.07;
+  background: url('/visit-storefront.jpg') center 60% / cover no-repeat;
+  opacity: 0.05;
   z-index: 0;
   pointer-events: none;
 }
@@ -1210,21 +1215,58 @@ body.cursor--expanded .cursor__ring {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+  /* Layout collapses */
   .story__body,
   .menu__grid,
   .menu__grid--food,
   .visit__body { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Hero: text sits at top, cup floats in lower half */
+  .pscene__hero-overlay {
+    justify-content: flex-start;
+    padding-top: clamp(5rem, 12vh, 7rem);
+  }
+  .hero__content { text-align: center; }
+  .hero__headline {
+    font-size: clamp(1.9rem, 7.5vw, 3.5rem);
+    justify-content: center; /* flex container — text-align alone won't center words */
+  }
+  .hero__subline { max-width: none; }
+  .hero__ctas { justify-content: center; gap: 0.75rem; }
+
+  /* Navbar: prevent ORDER NOW button clipping at right edge */
+  .navbar { padding: 1rem 1.25rem; }
+  .navbar .btn-ghost { font-size: 0.6rem; padding: 0.5em 1em; letter-spacing: 0.12em; }
+
+  /* Sections: tighter vertical rhythm */
+  .section { padding: clamp(3.5rem, 8vw, 10rem) 0; }
+
+  /* Story image */
   .story__product-img { max-width: 100%; margin: 0 auto; }
+
+  /* Gallery: 2-col, last item spans full width so no orphan */
   .gallery__bento {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+    gap: 8px;
+    padding: 0 1rem;
   }
   .gallery__item {
     grid-column: auto !important;
     grid-row: auto !important;
-    height: 200px;
+    height: 190px;
   }
+  .gallery__item:last-child { grid-column: 1 / -1 !important; height: 200px; }
+
+  /* Visit: shorter map */
+  .visit__map { height: 260px; }
+
+  /* Footer: explicit column stack */
+  .footer__inner { flex-direction: column; gap: 2rem; }
   .footer__col--contact { text-align: left; }
+
+  /* Navbar: tighter padding */
+  .navbar { padding: 1rem clamp(1rem, 4vw, 2rem); }
 }
 
 /* ─── Reduced Motion ─── */
