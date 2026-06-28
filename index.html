@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AVNM caffè</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <!-- Film grain + vignette overlays -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a class="navbar__logo" href="#" aria-label="AVNM caffè home">
+      <img src="/avnm-logo.png" alt="AVNM caffè" class="navbar__logo-img" />
+    </a>
+    <a class="navbar__cta btn-ghost magnetic" href="#contact" data-magnetic>Order Now</a>
+  </nav>
+
+  <!-- ── COFFEE PARALLAX SHOWCASE (hero merged here) ── -->
+  <section class="pscene-section" id="coffee-parallax" aria-label="Coffee showcase">
+    <div class="pscene">
+
+      <!-- Layer 1 — Background atmosphere (slowest) -->
+      <!-- Replace .pscene__bg background-image with your sky/atmosphere PNG -->
+      <div class="pscene__layer pscene__bg" aria-hidden="true"></div>
+
+      <!-- Layer 2 — Mid hills / landscape (slow) -->
+      <!-- Replace with a landscape PNG cutout (PNG with transparent top) -->
+      <div class="pscene__layer pscene__mid" aria-hidden="true"></div>
+
+      <!-- Layer 3 — Product stage: cup slides to center, pills pop around it -->
+      <div class="pscene__layer pscene__product-wrap">
+        <div class="pscene__product-stage">
+          <!-- Perspective wrapper isolates 3D context to the cup only -->
+          <div class="pscene__product-perspective">
+            <div class="pscene__product-inner">
+              <img
+                src="/product-cup.png"
+                class="pscene__product-img"
+                alt="AVNM caffè signature iced coffee"
+                draggable="false"
+              />
+            </div>
+          </div>
+          <!-- Story pills — pop up around centered cup: top / right / left -->
+          <div class="pscene__pill pscene__pill--1" aria-hidden="true">
+            <span class="pill__label">100% Arabica</span>
+            <span class="pill__sub">Single-origin beans</span>
+          </div>
+          <div class="pscene__pill pscene__pill--2" aria-hidden="true">
+            <span class="pill__label">Hand-crafted</span>
+            <span class="pill__sub">Every order made fresh</span>
+          </div>
+          <div class="pscene__pill pscene__pill--3" aria-hidden="true">
+            <span class="pill__label">Ethically sourced</span>
+            <span class="pill__sub">Direct from farm partners</span>
+          </div>
+        </div>
+      </div>
+      <!-- Caption — section-aligned, appears after cup returns to right -->
+      <div class="pscene__caption" aria-live="polite">
+        <div class="pscene__caption-label">Signature Brew</div>
+        <h2 class="pscene__headline">Brewed for<br/>the bold.</h2>
+        <p class="pscene__sub">Every order dialed in. Every cup, earned.</p>
+      </div>
+
+      <!-- Layer 4 — Steam / mist (medium-fast) -->
+      <div class="pscene__layer pscene__steam" aria-hidden="true">
+        <div class="steam-wisp steam-wisp--1"></div>
+        <div class="steam-wisp steam-wisp--2"></div>
+        <div class="steam-wisp steam-wisp--3"></div>
+      </div>
+
+      <!-- Layer 5 — Foreground hills / beans (fastest, covers bottom of product initially) -->
+      <div class="pscene__layer pscene__fg" aria-hidden="true"></div>
+
+      <!-- Hero overlay — visible on load, fades out as parallax scroll begins -->
+      <div class="pscene__hero-overlay" id="main-content">
+        <div class="hero__content">
+          <div class="hero__label">Est. 2020 — Dahlia, Quezon City</div>
+          <h1 class="hero__headline" aria-label="Extraordinary hot and bright">
+            <span class="word-wrap"><span class="word">Extraordinary</span></span>
+            <span class="word-wrap"><span class="word">hot</span></span>
+            <span class="word-wrap"><span class="word">and</span></span>
+            <span class="word-wrap"><span class="word">bright</span></span>
+          </h1>
+          <p class="hero__subline">Specialty coffee rooted in craft, served with intention.</p>
+          <div class="hero__ctas">
+            <a class="btn-ghost magnetic" href="#menu" data-magnetic>View Menu</a>
+            <a class="btn-ghost magnetic" href="#visit" data-magnetic>Visit Us</a>
+          </div>
+        </div>
+        <div class="hero__scroll-indicator" aria-hidden="true">
+          <span class="scroll-label">Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ── STORY ── -->
+  <section class="section story" id="story" tabindex="-1">
+    <div class="section__inner">
+      <div class="section__label reveal-item">01 — OUR STORY</div>
+      <div class="story__divider"></div>
+      <div class="story__body">
+        <div class="story__left">
+          <h2 class="story__headline reveal-item">
+            Where every<br/>cup tells<br/>a story.
+          </h2>
+          <div class="story__copy reveal-item">
+            <p>AVNM caffè started with one question: what does coffee taste like when nothing is rushed? In Dahlia, Fairview, we built an answer — a place where every drink is dialed in, every order made with care, and every guest leaves a little warmer than when they arrived.</p>
+            <p>The name belongs to the people who built it. The coffee belongs to everyone.</p>
+          </div>
+        </div>
+        <div class="story__right">
+          <img
+            src="/story-cafe.jpg"
+            class="story__product-img"
+            alt="AVNM caffè interior with signature iced coffee"
+            draggable="false"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="story__parallax-img parallax-layer" data-speed="0.3" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── MENU ── -->
+  <section class="section menu-section" id="menu">
+    <div class="section__inner">
+      <div class="section__label reveal-item">02 — MENU</div>
+      <div class="section__divider"></div>
+      <h2 class="menu-section__headline reveal-item">The Menu</h2>
+
+      <div class="menu__grid">
+
+        <!-- COFFEE (ICED) -->
+        <div class="menu__category">
+          <h3 class="menu__cat-title reveal-item">Coffee — Iced</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Americano</span><span class="menu__dots"></span><span class="menu__price">₱80</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Latte</span><span class="menu__dots"></span><span class="menu__price">₱90</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Brown Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">White Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Spanish Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Irish Cream</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Hazelnut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Macadamia Nut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Salted Caramel</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Caramel Macchiato</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Matcha Espresso</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Seasalt Latte</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
+          </ul>
+        </div>
+
+        <!-- NON-COFFEE -->
+        <div class="menu__category">
+          <h3 class="menu__cat-title reveal-item">Non-Coffee</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">White Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Caramel</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Matcha</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Matcha Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
+          </ul>
+
+          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Soda Lemonade</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Green Apple</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Blueberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Raspberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Peach</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Passion Fruit</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+          </ul>
+        </div>
+
+      </div><!-- /menu__grid drinks -->
+
+      <!-- Food divider -->
+      <div class="menu__food-divider reveal-item"></div>
+      <h3 class="menu__food-heading reveal-item">Food</h3>
+
+      <div class="menu__grid menu__grid--food">
+
+        <!-- LEFT: Pasta + Rice Meal -->
+        <div class="menu__category">
+          <h3 class="menu__cat-title reveal-item">Pasta</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Aglio Olio</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Chicken Alfredo</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Marinara</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Pesto</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+          </ul>
+
+          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Rice Meal</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Bacon &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Spam &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Burger Steak</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+          </ul>
+
+          <!-- food decoration placeholder -->
+        </div>
+
+        <!-- RIGHT: Burger + Sandwich + Appetizer -->
+        <div class="menu__category">
+          <h3 class="menu__cat-title reveal-item">Classic Burger</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">AVNM Burger</span><span class="menu__dots"></span><span class="menu__price">₱99</span></li>
+          </ul>
+          <div class="menu__addons reveal-item">
+            <span class="menu__addons-label">Add-ons</span>
+            <ul class="menu__addons-list">
+              <li><span class="menu__name">Patty</span><span class="menu__dots"></span><span class="menu__price">₱55</span></li>
+              <li><span class="menu__name">Bacon</span><span class="menu__dots"></span><span class="menu__price">₱45</span></li>
+              <li><span class="menu__name">Spam</span><span class="menu__dots"></span><span class="menu__price">₱35</span></li>
+              <li><span class="menu__name">Cheese</span><span class="menu__dots"></span><span class="menu__price">₱25</span></li>
+            </ul>
+          </div>
+
+          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Sandwich</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Bacon &amp; Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Ham &amp; Cheese</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Tuna Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">AVNM Clubhouse</span><span class="menu__dots"></span><span class="menu__price">₱179</span></li>
+          </ul>
+
+          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Appetizer</h3>
+          <ul class="menu__list">
+            <li class="menu__item reveal-item"><span class="menu__name">Nachos</span><span class="menu__dots"></span><span class="menu__price">₱129</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Nacho Fries</span><span class="menu__dots"></span><span class="menu__price">₱149</span></li>
+            <li class="menu__item reveal-item"><span class="menu__name">Fries</span><span class="menu__dots"></span><span class="menu__price">₱79</span></li>
+          </ul>
+        </div>
+
+      </div><!-- /menu__grid food -->
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section class="section gallery-section" id="gallery">
+    <div class="section__inner">
+      <div class="section__label reveal-item">03 — GALLERY</div>
+      <div class="section__divider"></div>
+    </div>
+    <div class="gallery__bento">
+      <div class="gallery__item parallax-layer" data-speed="0.15" aria-label="Four cups lineup"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.20" aria-label="Iced coffee and beans"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.12" aria-label="Latte art overhead"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.18" aria-label="Lattes on tray"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.25" aria-label="Matcha espresso"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.10" aria-label="Milk pour craft shot"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.22" aria-label="AVNM beans flat lay"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.16" aria-label="AVNM counter atmosphere"></div>
+      <div class="gallery__item parallax-layer" data-speed="0.13" aria-label="AVNM caffè storefront at night"></div>
+    </div>
+  </section>
+
+  <!-- ── VISIT US ── -->
+  <section class="section visit-section" id="visit">
+    <div class="section__inner">
+      <div class="section__label reveal-item">04 — VISIT US</div>
+      <div class="section__divider"></div>
+      <div class="visit__body">
+        <div class="visit__info">
+          <div class="visit__status reveal-item">Find Us</div>
+          <p class="visit__address reveal-item">Dahlia St., Fairview<br/>Quezon City, Philippines</p>
+          <a class="btn-ghost magnetic reveal-item" href="https://maps.google.com/maps?q=Dahlia,+Fairview,+Quezon+City,+Philippines" target="_blank" rel="noopener noreferrer" data-magnetic>Get Directions</a>
+        </div>
+        <div class="visit__map reveal-item">
+          <!-- Replace src with your styled Google Map embed URL -->
+          <iframe
+            src="https://maps.google.com/maps?q=Dahlia,+Quezon+City,+Philippines,+1116&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="AVNM caffè location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section" id="contact" aria-label="Contact us">
+    <div class="cta__body">
+      <p class="cta__eyebrow">Get In Touch</p>
+      <h2 class="cta__headline">Order. Ask.<br/>Connect.</h2>
+      <p class="cta__sub">Message us directly on Messenger — fastest way to order, ask about the menu, or just say hi.</p>
+      <div class="cta__buttons">
+        <a class="cta__btn cta__btn--primary magnetic" data-magnetic
+          href="https://m.me/AVNMCAFFEFAIRVIEWDAHLIA"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="Chat with us on Messenger">
+          <!-- Messenger icon -->
+          <svg class="cta__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.465 3.442.465 6.627 0 12-4.975 12-11.112C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/>
+          </svg>
+          Chat on Messenger
+        </a>
+        <a class="cta__btn cta__btn--secondary magnetic" data-magnetic
+          href="tel:+639165102362"
+          aria-label="Call or text us at 0916 510 2362">
+          <!-- Phone icon -->
+          <svg class="cta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Call / Text Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__col footer__col--brand">
+        <img src="/avnm-logo.png" alt="AVNM caffè" class="footer__logo-img" />
+        <p class="footer__tagline">Specialty coffee · Fairview Dahlia, QC</p>
+        <p class="footer__address">The AVNM Caffè – Fairview Dahlia<br/><span>In front of Mercury Drug</span></p>
+      </div>
+      <div class="footer__col footer__col--contact">
+        <a class="footer__link" href="tel:+639165102362">0916 510 2362 <span class="footer__badge">WE DELIVER</span></a>
+        <a class="footer__link" href="mailto:artvinmirasol@gmail.com">artvinmirasol@gmail.com</a>
+        <a class="footer__link" href="https://instagram.com/avnmfairviewdahlia" target="_blank" rel="noopener noreferrer">@avnmfairviewdahlia</a>
+        <a class="footer__link" href="https://www.facebook.com/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer">facebook.com/AVNMCaffeFairviewDahlia</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 AVNM caffè. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
