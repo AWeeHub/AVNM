@@ -1007,7 +1007,7 @@ body.cursor--expanded .cursor__ring {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/visit-storefront.jpg') center 60% / cover no-repeat;
+  background: url('/story-cafe.jpg') center 40% / cover no-repeat;
   opacity: 0.05;
   z-index: 0;
   pointer-events: none;
@@ -1221,6 +1221,9 @@ body.cursor--expanded .cursor__ring {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+  /* Show all content immediately — no scroll-triggered reveals on mobile */
+  .reveal-item { opacity: 1 !important; transform: none !important; }
+
   /* Layout collapses */
   .story__body,
   .menu__grid,
@@ -1619,6 +1622,35 @@ body.cursor--expanded .cursor__ring {
 @media (min-width: 769px) and (max-width: 1024px) {
   .footer__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
   .footer__col--brand { grid-column: 1 / -1; }
+  .hero__headline { font-size: clamp(2.8rem, 6.5vw, 7rem); }
+}
+
+/* ─── Mobile Signature Brew (shown below hero on mobile only) ─── */
+.signature-brew-mobile { display: none; }
+@media (max-width: 768px) {
+  .signature-brew-mobile {
+    display: block;
+    text-align: center;
+    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 5vw, 2rem);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .signature-brew-mobile .pscene__caption-label {
+    margin-bottom: 0.6rem;
+  }
+  .signature-brew-mobile__headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 9.5vw, 3.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.65rem;
+  }
+  .signature-brew-mobile .pscene__sub {
+    font-size: 0.82rem;
+    color: rgba(244, 241, 234, 0.55);
+  }
 }
 
 /* ─── Reduced Motion ─── */

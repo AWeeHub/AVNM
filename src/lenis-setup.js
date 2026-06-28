@@ -4,7 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export function initLenis() {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (reduce) return null
+  const isMobile = window.matchMedia('(max-width: 768px)').matches
+  if (reduce || isMobile) return null
 
   const lenis = new Lenis({
     duration: 1.4,
