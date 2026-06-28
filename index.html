@@ -8,6 +8,35 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Special+Elite&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/src/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "AVNM caffè",
+    "url": "https://avnm-caffe.vercel.app",
+    "telephone": "+639165102362",
+    "email": "artvinmirasol@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dahlia St., Fairview",
+      "addressLocality": "Quezon City",
+      "addressCountry": "PH"
+    },
+    "hasMap": "https://maps.google.com/maps?q=Dahlia,+Fairview,+Quezon+City,+Philippines",
+    "sameAs": [
+      "https://www.facebook.com/AVNMCAFFEFAIRVIEWDAHLIA",
+      "https://instagram.com/avnmfairviewdahlia"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "19:00",
+        "closes": "04:00"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -31,7 +60,13 @@
     <a class="navbar__logo" href="#" aria-label="AVNM caffè home">
       <img src="/avnm-logo.png" alt="AVNM caffè" class="navbar__logo-img" />
     </a>
-    <a class="navbar__cta btn-ghost magnetic" href="#contact" data-magnetic>Order Now</a>
+    <div class="navbar__actions">
+      <a class="btn-ghost magnetic navbar__view-menu" href="#menu" data-magnetic>View Menu</a>
+      <a class="navbar__messenger magnetic" href="https://m.me/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer" data-magnetic aria-label="Order on Messenger">
+        <svg class="navbar__messenger-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.465 3.442.465 6.627 0 12-4.975 12-11.112C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/></svg>
+        Message to Order
+      </a>
+    </div>
   </nav>
 
   <!-- ── COFFEE PARALLAX SHOWCASE (hero merged here) ── -->
@@ -95,7 +130,7 @@
       <!-- Hero overlay — visible on load, fades out as parallax scroll begins -->
       <div class="pscene__hero-overlay" id="main-content">
         <div class="hero__content">
-          <div class="hero__label">Est. 2020 — Dahlia, Quezon City</div>
+          <div class="hero__label">Est. 2020 · Open daily 7 PM – 4 AM · Dahlia, QC</div>
           <h1 class="hero__headline" aria-label="Extraordinary hot and bright">
             <span class="word-wrap"><span class="word">Extraordinary</span></span>
             <span class="word-wrap"><span class="word">hot</span></span>
@@ -149,90 +184,103 @@
   <!-- ── MENU ── -->
   <section class="section menu-section" id="menu">
     <div class="section__inner">
-      <div class="section__label reveal-item">02 — MENU</div>
-      <div class="section__divider"></div>
-      <h2 class="menu-section__headline reveal-item">The Menu</h2>
+      <p class="menu__eyebrow reveal-item">The Menu</p>
+      <h2 class="menu__title reveal-item">Order what you love.</h2>
+      <p class="menu__subtitle reveal-item">Specialty coffee, comfort meals, and cold refreshers — all prices in pesos.</p>
 
-      <div class="menu__grid">
+      <nav class="menu__quicknav" aria-label="Menu categories">
+        <a class="menu__chip" href="#cat-coffee">Iced Coffee</a>
+        <a class="menu__chip" href="#cat-noncoffee">Non-Coffee</a>
+        <a class="menu__chip" href="#cat-soda">Soda Lemonade</a>
+        <a class="menu__chip" href="#cat-pasta">Pasta</a>
+        <a class="menu__chip" href="#cat-rice">Rice Meals</a>
+        <a class="menu__chip" href="#cat-burger">Burger</a>
+        <a class="menu__chip" href="#cat-sandwich">Sandwich</a>
+        <a class="menu__chip" href="#cat-appetizer">Appetizer</a>
+      </nav>
 
-        <!-- COFFEE (ICED) -->
-        <div class="menu__category">
-          <h3 class="menu__cat-title reveal-item">Coffee — Iced</h3>
+      <div class="menu__masonry">
+
+        <div class="menu__card reveal-item" id="cat-coffee">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Coffee <span class="menu__card-tag">Iced</span></h3>
+          </div>
           <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Americano</span><span class="menu__dots"></span><span class="menu__price">₱80</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Latte</span><span class="menu__dots"></span><span class="menu__price">₱90</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Brown Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">White Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Spanish Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Irish Cream</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Hazelnut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Macadamia Nut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Salted Caramel</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Caramel Macchiato</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Matcha Espresso</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Seasalt Latte</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
+            <li class="menu__item"><span class="menu__name">Americano</span><span class="menu__dots"></span><span class="menu__price">₱80</span></li>
+            <li class="menu__item"><span class="menu__name">Latte</span><span class="menu__dots"></span><span class="menu__price">₱90</span></li>
+            <li class="menu__item"><span class="menu__name">Brown Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">White Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Spanish Latte</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Irish Cream</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Hazelnut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Macadamia Nut</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Mocha</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Salted Caramel</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Caramel Macchiato</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Matcha Espresso</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
+            <li class="menu__item"><span class="menu__name">Seasalt Latte</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
           </ul>
         </div>
 
-        <!-- NON-COFFEE -->
-        <div class="menu__category">
-          <h3 class="menu__cat-title reveal-item">Non-Coffee</h3>
+        <div class="menu__card reveal-item" id="cat-noncoffee">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Non-Coffee</h3>
+          </div>
           <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">White Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Caramel</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Matcha</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Matcha Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
-          </ul>
-
-          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Soda Lemonade</h3>
-          <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Green Apple</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Blueberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Raspberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Peach</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Passion Fruit</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">White Chocolate</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Caramel</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Matcha</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
+            <li class="menu__item"><span class="menu__name">Matcha Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱130</span></li>
           </ul>
         </div>
 
-      </div><!-- /menu__grid drinks -->
-
-      <!-- Food divider -->
-      <div class="menu__food-divider reveal-item"></div>
-      <h3 class="menu__food-heading reveal-item">Food</h3>
-
-      <div class="menu__grid menu__grid--food">
-
-        <!-- LEFT: Pasta + Rice Meal -->
-        <div class="menu__category">
-          <h3 class="menu__cat-title reveal-item">Pasta</h3>
+        <div class="menu__card reveal-item" id="cat-soda">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Soda Lemonade</h3>
+          </div>
           <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Aglio Olio</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Chicken Alfredo</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Marinara</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Pesto</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item"><span class="menu__name">Green Apple</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Strawberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Blueberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Raspberry</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Peach</span><span class="menu__dots"></span><span class="menu__price">₱100</span></li>
+            <li class="menu__item"><span class="menu__name">Passion Fruit</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
           </ul>
-
-          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Rice Meal</h3>
-          <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Bacon &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Spam &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Burger Steak</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
-          </ul>
-
-          <!-- food decoration placeholder -->
         </div>
 
-        <!-- RIGHT: Burger + Sandwich + Appetizer -->
-        <div class="menu__category">
-          <h3 class="menu__cat-title reveal-item">Classic Burger</h3>
+        <div class="menu__card reveal-item" id="cat-pasta">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Pasta</h3>
+          </div>
           <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">AVNM Burger</span><span class="menu__dots"></span><span class="menu__price">₱99</span></li>
+            <li class="menu__item"><span class="menu__name">Aglio Olio</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item"><span class="menu__name">Chicken Alfredo</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item"><span class="menu__name">Marinara</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
+            <li class="menu__item"><span class="menu__name">Pesto</span><span class="menu__dots"></span><span class="menu__price">₱159</span></li>
           </ul>
-          <div class="menu__addons reveal-item">
+        </div>
+
+        <div class="menu__card reveal-item" id="cat-rice">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Rice Meal</h3>
+          </div>
+          <ul class="menu__list">
+            <li class="menu__item"><span class="menu__name">Bacon &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+            <li class="menu__item"><span class="menu__name">Spam &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+            <li class="menu__item"><span class="menu__name">Burger Steak</span><span class="menu__dots"></span><span class="menu__price">₱169</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__card reveal-item" id="cat-burger">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Classic Burger</h3>
+          </div>
+          <ul class="menu__list">
+            <li class="menu__item"><span class="menu__name">AVNM Burger</span><span class="menu__dots"></span><span class="menu__price">₱99</span></li>
+          </ul>
+          <div class="menu__addons">
             <span class="menu__addons-label">Add-ons</span>
             <ul class="menu__addons-list">
               <li><span class="menu__name">Patty</span><span class="menu__dots"></span><span class="menu__price">₱55</span></li>
@@ -241,24 +289,43 @@
               <li><span class="menu__name">Cheese</span><span class="menu__dots"></span><span class="menu__price">₱25</span></li>
             </ul>
           </div>
+        </div>
 
-          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Sandwich</h3>
+        <div class="menu__card reveal-item" id="cat-sandwich">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Sandwich</h3>
+          </div>
           <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Bacon &amp; Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Ham &amp; Cheese</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Tuna Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">AVNM Clubhouse</span><span class="menu__dots"></span><span class="menu__price">₱179</span></li>
-          </ul>
-
-          <h3 class="menu__cat-title reveal-item" style="margin-top: 3rem;">Appetizer</h3>
-          <ul class="menu__list">
-            <li class="menu__item reveal-item"><span class="menu__name">Nachos</span><span class="menu__dots"></span><span class="menu__price">₱129</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Nacho Fries</span><span class="menu__dots"></span><span class="menu__price">₱149</span></li>
-            <li class="menu__item reveal-item"><span class="menu__name">Fries</span><span class="menu__dots"></span><span class="menu__price">₱79</span></li>
+            <li class="menu__item"><span class="menu__name">Bacon &amp; Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱120</span></li>
+            <li class="menu__item"><span class="menu__name">Ham &amp; Cheese</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">Tuna Mushroom</span><span class="menu__dots"></span><span class="menu__price">₱110</span></li>
+            <li class="menu__item"><span class="menu__name">AVNM Clubhouse</span><span class="menu__dots"></span><span class="menu__price">₱179</span></li>
           </ul>
         </div>
 
-      </div><!-- /menu__grid food -->
+        <div class="menu__card reveal-item" id="cat-appetizer">
+          <div class="menu__card-header">
+            <h3 class="menu__card-title">Appetizer</h3>
+          </div>
+          <ul class="menu__list">
+            <li class="menu__item"><span class="menu__name">Nachos</span><span class="menu__dots"></span><span class="menu__price">₱129</span></li>
+            <li class="menu__item"><span class="menu__name">Nacho Fries</span><span class="menu__dots"></span><span class="menu__price">₱149</span></li>
+            <li class="menu__item"><span class="menu__name">Fries</span><span class="menu__dots"></span><span class="menu__price">₱79</span></li>
+          </ul>
+        </div>
+
+      </div><!-- /menu__masonry -->
+
+      <div class="menu__cta-card reveal-item">
+        <div class="menu__cta-left">
+          <h3 class="menu__cta-title">Ready to order?</h3>
+          <p class="menu__cta-sub">Send your order on Messenger — fastest way, and you can ask for delivery.</p>
+        </div>
+        <a class="btn-messenger" href="https://m.me/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer" aria-label="Message to order on Messenger">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:16px;height:16px;flex-shrink:0"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.465 3.442.465 6.627 0 12-4.975 12-11.112C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/></svg>
+          Message to order
+        </a>
+      </div>
     </div>
   </section>
 
@@ -284,25 +351,41 @@
   <!-- ── VISIT US ── -->
   <section class="section visit-section" id="visit">
     <div class="section__inner">
-      <div class="section__label reveal-item">04 — VISIT US</div>
-      <div class="section__divider"></div>
-      <div class="visit__body">
-        <div class="visit__info">
-          <div class="visit__status reveal-item">Find Us</div>
-          <p class="visit__address reveal-item">Dahlia St., Fairview<br/>Quezon City, Philippines</p>
-          <a class="btn-ghost magnetic reveal-item" href="https://maps.google.com/maps?q=Dahlia,+Fairview,+Quezon+City,+Philippines" target="_blank" rel="noopener noreferrer" data-magnetic>Get Directions</a>
+      <p class="visit__eyebrow reveal-item">Visit Us</p>
+      <h2 class="visit__heading reveal-item">Find AVNM.</h2>
+      <div class="visit__grid">
+        <div class="visit__card reveal-item">
+          <div class="visit__row">
+            <span class="visit__row-label">Address</span>
+            <span class="visit__row-value visit__row-value--address">Dahlia St., Fairview / Quezon City, Philippines</span>
+            <span class="visit__row-sub">In front of Mercury Drug</span>
+          </div>
+          <div class="visit__row">
+            <span class="visit__row-label">Hours</span>
+            <span class="visit__row-value">Open daily · 7:00 PM – 4:00 AM</span>
+          </div>
+          <div class="visit__row">
+            <span class="visit__row-label">Call or text · We deliver</span>
+            <a href="tel:+639165102362" class="visit__row-value visit__row-link">0916 510 2362</a>
+          </div>
+          <div class="visit__row">
+            <span class="visit__row-label">Follow</span>
+            <a href="https://instagram.com/avnmfairviewdahlia" class="visit__row-value visit__row-link" target="_blank" rel="noopener noreferrer">@avnmfairviewdahlia</a>
+          </div>
+          <div class="visit__card-btn">
+            <a class="btn-ghost magnetic" href="https://maps.google.com/maps?q=Dahlia,+Fairview,+Quezon+City,+Philippines" target="_blank" rel="noopener noreferrer" data-magnetic>Get directions</a>
+          </div>
         </div>
-        <div class="visit__map reveal-item">
-          <!-- Replace src with your styled Google Map embed URL -->
+        <div class="visit__map-wrap reveal-item">
           <iframe
-            src="https://maps.google.com/maps?q=Dahlia,+Quezon+City,+Philippines,+1116&output=embed"
+            src="https://maps.google.com/maps?q=Dahlia,+Fairview,+Quezon+City,+Philippines&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="AVNM caffè location"
+            title="AVNM caffè location — Dahlia St., Fairview, Quezon City"
           ></iframe>
         </div>
       </div>
@@ -314,7 +397,7 @@
     <div class="cta__body">
       <p class="cta__eyebrow">Get In Touch</p>
       <h2 class="cta__headline">Order. Ask.<br/>Connect.</h2>
-      <p class="cta__sub">Message us directly on Messenger — fastest way to order, ask about the menu, or just say hi.</p>
+      <p class="cta__sub">Message us directly on Messenger — the fastest way to place an order, ask about the menu, or arrange delivery.</p>
       <div class="cta__buttons">
         <a class="cta__btn cta__btn--primary magnetic" data-magnetic
           href="https://m.me/AVNMCAFFEFAIRVIEWDAHLIA"
@@ -329,11 +412,10 @@
         <a class="cta__btn cta__btn--secondary magnetic" data-magnetic
           href="tel:+639165102362"
           aria-label="Call or text us at 0916 510 2362">
-          <!-- Phone icon -->
           <svg class="cta__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
           </svg>
-          Call / Text Us
+          Call / Text · 0916 510 2362
         </a>
       </div>
     </div>
@@ -341,23 +423,46 @@
 
   <!-- ── FOOTER ── -->
   <footer class="footer" id="footer">
-    <div class="footer__inner">
+    <div class="footer__grid">
       <div class="footer__col footer__col--brand">
-        <img src="/avnm-logo.png" alt="AVNM caffè" class="footer__logo-img" />
+        <div class="footer__brand-row">
+          <img src="/avnm-logo.png" alt="AVNM caffè" class="footer__logo-img" />
+          <span class="footer__brand-name">AVNM caffè</span>
+        </div>
         <p class="footer__tagline">Specialty coffee · Fairview Dahlia, QC</p>
-        <p class="footer__address">The AVNM Caffè – Fairview Dahlia<br/><span>In front of Mercury Drug</span></p>
+        <p class="footer__address">The AVNM Caffè – Fairview Dahlia, in front of Mercury Drug.</p>
       </div>
-      <div class="footer__col footer__col--contact">
-        <a class="footer__link" href="tel:+639165102362">0916 510 2362 <span class="footer__badge">WE DELIVER</span></a>
+      <div class="footer__col footer__col--visit">
+        <h4 class="footer__col-heading">Visit</h4>
+        <p>Dahlia St., Fairview</p>
+        <p>Quezon City, Philippines</p>
+        <p>Open daily · 7PM–4AM</p>
+      </div>
+      <div class="footer__col footer__col--connect">
+        <h4 class="footer__col-heading">Connect</h4>
+        <a class="footer__link" href="tel:+639165102362">0916 510 2362 · We deliver</a>
         <a class="footer__link" href="mailto:artvinmirasol@gmail.com">artvinmirasol@gmail.com</a>
         <a class="footer__link" href="https://instagram.com/avnmfairviewdahlia" target="_blank" rel="noopener noreferrer">@avnmfairviewdahlia</a>
-        <a class="footer__link" href="https://www.facebook.com/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer">facebook.com/AVNMCaffeFairviewDahlia</a>
+        <a class="footer__link" href="https://www.facebook.com/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© 2025 AVNM caffè. All rights reserved.</span>
+      <span class="footer__bold-tagline">Brewed for the bold.</span>
     </div>
   </footer>
+
+  <!-- ── STICKY MOBILE ORDER BAR ── -->
+  <div class="order-bar" role="complementary" aria-label="Quick order">
+    <a class="order-bar__btn order-bar__btn--messenger" href="https://m.me/AVNMCAFFEFAIRVIEWDAHLIA" target="_blank" rel="noopener noreferrer" aria-label="Order on Messenger">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.465 3.442.465 6.627 0 12-4.975 12-11.112C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/></svg>
+      Order
+    </a>
+    <a class="order-bar__btn order-bar__btn--call" href="tel:+639165102362" aria-label="Call 0916 510 2362">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call
+    </a>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
