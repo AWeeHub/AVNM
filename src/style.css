@@ -735,11 +735,11 @@ body.cursor--expanded .cursor__ring {
   .pscene__product-stage {
     right: auto;
     left: 50%;
-    top: 64%; /* cup lives in lower half so hero text has room above */
+    top: 60%; /* cup lives in lower half so hero text has room above */
   }
   .pscene__product-img {
-    height: 52vh;
-    max-height: 340px;
+    height: 65vh;
+    max-height: 460px;
     animation: productFloat 3.5s ease-in-out infinite;
   }
   .pscene__caption {
