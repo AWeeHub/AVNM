@@ -1221,7 +1221,18 @@ body.cursor--expanded .cursor__ring {
   z-index: 1;
 }
 
-/* ─── Responsive ─── */
+/* ─── Tablet (769px – 1024px) ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .footer__col--brand { grid-column: 1 / -1; }
+
+  .section__inner { padding: 0 2rem; }
+}
+
+/* ─── Mobile (≤ 768px) ─── */
 @media (max-width: 768px) {
   /* Show all content immediately — no scroll-triggered reveals on mobile */
   .reveal-item { opacity: 1 !important; transform: none !important; }
@@ -1229,8 +1240,7 @@ body.cursor--expanded .cursor__ring {
   /* Layout collapses */
   .story__body,
   .menu__grid,
-  .menu__grid--food,
-  .visit__body { grid-template-columns: 1fr; gap: 2.5rem; }
+  .menu__grid--food { grid-template-columns: 1fr; gap: 2.5rem; }
 
   /* Hero: text sits at top, cup floats in lower half */
   .pscene__hero-overlay {
@@ -1240,17 +1250,18 @@ body.cursor--expanded .cursor__ring {
   .hero__content { text-align: center; }
   .hero__headline {
     font-size: clamp(1.9rem, 7.5vw, 3.5rem);
-    justify-content: center; /* flex container — text-align alone won't center words */
+    justify-content: center;
   }
   .hero__subline { max-width: none; }
   .hero__ctas { justify-content: center; gap: 0.75rem; }
 
-  /* Navbar: prevent ORDER NOW button clipping at right edge */
-  .navbar { padding: 1rem 1.25rem; }
+  /* Navbar */
+  .navbar { padding: 0.85rem clamp(1rem, 4vw, 1.5rem); }
   .navbar .btn-ghost { font-size: 0.6rem; padding: 0.5em 1em; letter-spacing: 0.12em; }
+  .navbar__logo-img { height: 44px; width: 44px; }
 
   /* Sections: tighter vertical rhythm */
-  .section { padding: clamp(3.5rem, 8vw, 10rem) 0; }
+  .section { padding: clamp(3rem, 8vw, 5rem) 0; }
 
   /* Story image */
   .story__product-img { max-width: 100%; margin: 0 auto; }
@@ -1269,15 +1280,16 @@ body.cursor--expanded .cursor__ring {
   }
   .gallery__item:last-child { grid-column: 1 / -1 !important; height: 200px; }
 
-  /* Visit: shorter map */
-  .visit__map { height: 260px; }
+  /* Footer: stack all columns */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer__logo-img { height: 52px; width: 52px; }
 
-  /* Footer: explicit column stack */
-  .footer__inner { flex-direction: column; gap: 2rem; }
-  .footer__col--contact { text-align: left; }
-
-  /* Navbar: tighter padding */
-  .navbar { padding: 1rem clamp(1rem, 4vw, 2rem); }
+  /* CTA */
+  .cta__buttons { flex-direction: column; align-items: stretch; }
+  .cta__btn { text-align: center; justify-content: center; }
 }
 
 /* ─── Messenger Button (global) ─── */
@@ -1546,7 +1558,7 @@ body.cursor--expanded .cursor__ring {
   font-size: 0.55rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.38);
+  color: var(--gold);
   margin-bottom: 1rem;
 }
 .footer__col--visit p {
@@ -1652,6 +1664,171 @@ body.cursor--expanded .cursor__ring {
   .signature-brew-mobile .pscene__sub {
     font-size: 0.82rem;
     color: rgba(244, 241, 234, 0.55);
+  }
+}
+
+/* ── Footer Social Icons ── */
+.footer__social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.footer__social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  color: rgba(244, 241, 234, 0.45);
+  transition: border-color 0.2s, color 0.2s;
+}
+.footer__social-icon:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.footer__social-icon svg { width: 14px; height: 14px; }
+
+/* ── Footer brand email ── */
+.footer__brand-email {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(244, 241, 234, 0.45);
+  transition: color 0.25s;
+  margin-top: 0.5rem;
+  display: block;
+}
+.footer__brand-email:hover { color: var(--gold); }
+
+.footer__link--franchise {
+  margin-top: 0.5rem;
+  color: var(--gold) !important;
+  opacity: 0.8;
+  font-weight: 500;
+}
+.footer__link--franchise:hover { opacity: 1; }
+
+/* ── FRANCHISE SECTION ── */
+.franchise-section {
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.franchise__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.franchise__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.0;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+
+.franchise__sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(244, 241, 234, 0.6);
+  padding-top: 0.5rem;
+}
+
+.franchise__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  margin-bottom: 3.5rem;
+}
+
+.franchise__card {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid rgba(201, 169, 110, 0.15);
+}
+.franchise__card:last-child { border-right: none; }
+
+.franchise__card-num {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.franchise__card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  margin-bottom: 0.65rem;
+}
+
+.franchise__card-text {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(244, 241, 234, 0.55);
+}
+
+.franchise__cta {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.franchise__cta-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(244, 241, 234, 0.45);
+  letter-spacing: 0.04em;
+}
+
+.franchise__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85em 2em;
+  border: 1px solid rgba(201, 169, 110, 0.55);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.franchise__cta-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .franchise__intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .franchise__grid {
+    grid-template-columns: 1fr;
+  }
+  .franchise__card {
+    border-right: none;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  }
+  .franchise__card:last-child { border-bottom: none; }
+  .franchise__cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
 
