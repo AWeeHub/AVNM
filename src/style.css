@@ -1210,11 +1210,15 @@ body.cursor--expanded .cursor__ring {
   transition: color 0.3s;
 }
 .footer__link:hover { color: var(--gold); }
+.footer__col--brand {
+  display: flex;
+  flex-direction: column;
+}
 .footer__copyright {
   font-size: 0.65rem;
   color: rgba(244, 241, 234, 0.3);
   letter-spacing: 0.04em;
-  margin: 0.5rem 0 0;
+  margin: auto 0 0;
 }
 
 .footer__bottom {
