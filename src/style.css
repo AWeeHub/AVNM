@@ -1650,6 +1650,9 @@ body.cursor--expanded .cursor__ring {
 
 /* ─── Mobile Signature Brew (shown below hero on mobile only) ─── */
 .signature-brew-mobile { display: none; }
+.mobile-pills { display: none; }
+.footer__copyright--mobile-bottom { display: none; }
+
 @media (max-width: 768px) {
   .signature-brew-mobile {
     display: block;
@@ -1673,6 +1676,37 @@ body.cursor--expanded .cursor__ring {
   .signature-brew-mobile .pscene__sub {
     font-size: 0.82rem;
     color: rgba(244, 241, 234, 0.55);
+  }
+
+  /* Static product pills on mobile */
+  .mobile-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+  .mobile-pill {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(244, 241, 234, 0.55);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    padding: 0.35em 0.75em;
+  }
+
+  /* Copyright: hide inside brand col, show at very bottom of footer */
+  .footer__col--brand .footer__copyright { display: none; }
+  .footer__copyright--mobile-bottom {
+    display: block;
+    font-size: 0.65rem;
+    color: rgba(244, 241, 234, 0.3);
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 1rem clamp(1rem, 4vw, 1.5rem) 0.5rem;
+    border-top: 1px solid rgba(244, 241, 234, 0.06);
+    margin-top: 0.5rem;
   }
 }
 
