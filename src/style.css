@@ -759,6 +759,8 @@ body.cursor--expanded .cursor__ring {
   flex-direction: column;
   gap: 2.5rem;
 }
+.highlight { color: var(--gold); }
+
 .story__headline {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 5rem);
