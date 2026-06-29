@@ -146,8 +146,8 @@ body.cursor--expanded .cursor__ring {
 }
 .navbar__logo { display: flex; align-items: center; }
 .navbar__logo-img {
-  height: 52px;
-  width: 52px;
+  height: 68px;
+  width: 68px;
   object-fit: contain;
   transition: opacity 0.3s;
 }
@@ -1166,8 +1166,8 @@ body.cursor--expanded .cursor__ring {
   z-index: 1;
 }
 .footer__logo-img {
-  height: 72px;
-  width: 72px;
+  height: 96px;
+  width: 96px;
   object-fit: contain;
   display: block;
   margin-bottom: 0.75rem;
@@ -1267,7 +1267,7 @@ body.cursor--expanded .cursor__ring {
   /* Navbar */
   .navbar { padding: 0.85rem clamp(1rem, 4vw, 1.5rem); }
   .navbar .btn-ghost { font-size: 0.6rem; padding: 0.5em 1em; letter-spacing: 0.12em; }
-  .navbar__logo-img { height: 44px; width: 44px; }
+  .navbar__logo-img { height: 56px; width: 56px; }
 
   /* Sections: tighter vertical rhythm */
   .section { padding: clamp(3rem, 8vw, 5rem) 0; }
@@ -1561,6 +1561,7 @@ body.cursor--expanded .cursor__ring {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  line-height: 1;
 }
 .footer__col-heading {
   font-family: var(--font-mono);
