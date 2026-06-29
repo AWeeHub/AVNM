@@ -445,6 +445,9 @@ a { text-decoration: none; color: inherit; }
 
 /* ── Tablet (769px – 1024px) ── */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .fr-nav { padding: 1.25rem clamp(1.5rem, 5vw, 4rem); }
+  .fr-nav__logo-img { height: 60px; width: 60px; }
+
   .fr-hero__headline { font-size: clamp(3rem, 7vw, 5.5rem); }
 
   .fr-pillars { gap: 0; }
