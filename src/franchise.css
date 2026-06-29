@@ -394,7 +394,7 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.04em;
   margin: 0;
 }
-.fr-footer__logo { height: 72px; width: 72px; object-fit: contain; }
+.fr-footer__logo { height: 72px; width: 72px; object-fit: contain; display: block; flex-shrink: 0; }
 .fr-footer__name {
   font-family: var(--font-display);
   font-size: 0.85rem;

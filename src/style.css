@@ -1170,7 +1170,7 @@ body.cursor--expanded .cursor__ring {
   width: 96px;
   object-fit: contain;
   display: block;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
 }
 .footer__tagline {
   font-size: 0.8rem;
@@ -1297,7 +1297,7 @@ body.cursor--expanded .cursor__ring {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .footer__logo-img { height: 52px; width: 52px; }
+  .footer__logo-img { height: 80px; width: 80px; }
 
   /* CTA */
   .cta__buttons { flex-direction: column; align-items: stretch; }
