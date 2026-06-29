@@ -393,6 +393,7 @@ body.cursor--expanded .cursor__ring {
   will-change: transform;
 }
 
+
 /* Placeholder — remove when you drop in real PNG */
 .pscene__product-placeholder {
   width: 200px;
@@ -577,12 +578,13 @@ body.cursor--expanded .cursor__ring {
   .avnm-cup { animation: none; }
 }
 
-/* Product PNG — transparent bg, no blending needed */
+/* Product image — black bg blends away on dark hero via screen mode */
 .pscene__product-img {
   height: 80vh;
   max-height: 720px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: screen;
   filter:
     drop-shadow(0 40px 80px rgba(0,0,0,0.85))
     drop-shadow(0 0 50px rgba(200,162,75,0.22))
@@ -942,61 +944,61 @@ body.cursor--expanded .cursor__ring {
 /* Row 1 */
 .gallery__item:nth-child(1) {
   grid-column: 1 / 5;  grid-row: 1;
-  background-image: url('/gallery-cups.jpg');
+  background-image: url('/gallery-avnm-coffees.jpg');
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 68%;
 }
 .gallery__item:nth-child(2) {
   grid-column: 5 / 9;  grid-row: 1;
-  background-image: url('/gallery-iced-beans.jpg');
+  background-image: url('/gallery-spam-rice.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 58%;
 }
 .gallery__item:nth-child(3) {
   grid-column: 9 / 13; grid-row: 1;
-  background-image: url('/gallery-latte.jpg');
+  background-image: url('/gallery-bacon-rice.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 55%;
 }
 
 /* Row 2 */
 .gallery__item:nth-child(4) {
   grid-column: 1 / 4;  grid-row: 2;
-  background-image: url('/gallery-lattes-tray.jpg');
+  background-image: url('/gallery-burgers.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
 }
 .gallery__item:nth-child(5) {
   grid-column: 4 / 8;  grid-row: 2;
-  background-image: url('/gallery-matcha.jpg');
+  background-image: url('/gallery-red-pasta.jpg');
   background-size: cover;
-  background-position: center 65%;
+  background-position: center 70%;
 }
 .gallery__item:nth-child(6) {
   grid-column: 8 / 13; grid-row: 2;
-  background-image: url('/gallery-espresso-pour.jpg');
+  background-image: url('/gallery-sandwich-chips.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 52%;
 }
 
 /* Row 3 */
 .gallery__item:nth-child(7) {
   grid-column: 1 / 5;  grid-row: 3;
-  background-image: url('/gallery-beans-flatlay.jpg');
+  background-image: url('/gallery-cream-pasta.jpg');
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 68%;
 }
 .gallery__item:nth-child(8) {
   grid-column: 5 / 10; grid-row: 3;
-  background-image: url('/gallery-counter.jpg');
+  background-image: url('/gallery-burger-steak.jpg');
   background-size: cover;
-  background-position: center 55%;
+  background-position: center 60%;
 }
 .gallery__item:nth-child(9) {
   grid-column: 10 / 13; grid-row: 3;
-  background-image: url('/gallery-sandwich.jpg');
+  background-image: url('/gallery-beans-cup.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center 65%;
 }
 
 /* ─── Visit ─── */

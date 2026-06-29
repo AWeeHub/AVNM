@@ -32,3 +32,10 @@ initParallaxProduct()
 window.addEventListener('load', () => {
   ScrollTrigger.refresh()
 })
+
+// Recalculate layout-dependent GSAP values on resize/zoom
+let _resizeTimer
+window.addEventListener('resize', () => {
+  clearTimeout(_resizeTimer)
+  _resizeTimer = setTimeout(() => ScrollTrigger.refresh(true), 200)
+})

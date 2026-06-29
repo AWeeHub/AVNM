@@ -20,19 +20,21 @@ export function initParallaxProduct() {
     // Vertically center caption beside cup
     gsap.set('.pscene__caption', { yPercent: -50 })
 
-    // Offset to slide stage from right to viewport center
-    const stageRect = stage.getBoundingClientRect()
-    const stageCenterX = stageRect.left + stageRect.width / 2
-    const centerX = window.innerWidth / 2 - stageCenterX  // negative = move left
+    // Functional value — re-evaluated on every ScrollTrigger.refresh() (resize/zoom)
+    const getCenterX = () => {
+      const r = stage.getBoundingClientRect()
+      return window.innerWidth / 2 - (r.left + r.width / 2)
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         pin: true,
-        scrub: 2.2,           // smoother, more lag
+        scrub: 2.2,
         start: 'top top',
-        end: '+=3800',        // more scroll distance = slower overall feel
+        end: '+=3800',
         anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     })
 
@@ -49,7 +51,7 @@ export function initParallaxProduct() {
       // ── Phase 1 (0.22 → 0.44): Cup slides from right to center AFTER hero clears ──
       .fromTo(stage,
         { x: 0 },
-        { x: centerX, ease: 'power2.out', duration: 0.22 },
+        { x: getCenterX, ease: 'power2.out', duration: 0.22 },
         0.22
       )
 
@@ -96,7 +98,7 @@ export function initParallaxProduct() {
     const storyImg = document.querySelector('.story__product-img')
     if (storyImg) {
       gsap.fromTo(storyImg,
-        { y: -window.innerHeight, opacity: 0 },
+        { y: () => -window.innerHeight, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -106,6 +108,7 @@ export function initParallaxProduct() {
             start: 'top bottom',
             end: 'top 35%',
             scrub: 2,
+            invalidateOnRefresh: true,
           }
         }
       )
