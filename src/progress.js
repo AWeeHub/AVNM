@@ -10,7 +10,7 @@ export function initProgressBar() {
     start: 'top top',
     end: 'bottom bottom',
     onUpdate: (self) => {
-      gsap.set(bar, { width: `${self.progress * 100}%` })
+      gsap.set(bar, { scaleX: self.progress })
     },
   })
 }
